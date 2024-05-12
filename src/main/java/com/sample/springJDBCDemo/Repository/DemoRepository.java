@@ -35,7 +35,7 @@ public class DemoRepository {
         return u;
     }
 
-    public User deleted(int id){
+    public void deleted(int id){
         try {
             Connection connection = dbConection.getConnection();
             PreparedStatement psmt = connection.prepareStatement("DELETE FROM users WHERE id = ?");
@@ -44,7 +44,6 @@ public class DemoRepository {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return null;
     }
 
     public List<User> getAllUsers() {
